@@ -22,5 +22,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_dashboard))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val coordinate = CoordinateAA(20, 50, -40, Direction.WIDTH)
+        val coordinate1 = CoordinateAA(5, 13, 45, Direction.WIDTH)
+
+        println(coordinate.getDegreesSecondsMinutesDirection())
+        println(coordinate.getDegreesSecondsMinutesDirectionDouble())
+        println(coordinate.averageCoordinate(coordinate1))
+        println(coordinate.averageCoordinateTwoParameters(coordinate, coordinate1))
     }
 }
