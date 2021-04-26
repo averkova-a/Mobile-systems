@@ -10,4 +10,10 @@
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/baseline_trending_up_24"
         android:title="@string/title_dashboard"/>
+
+    <item
+        android:id="@+id/navigation_book"
+        android:icon="@drawable/baseline_book_24"
+        android:title="@string/title_books" />
+
 </menu>

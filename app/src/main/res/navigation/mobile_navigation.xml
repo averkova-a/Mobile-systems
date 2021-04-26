@@ -16,4 +16,10 @@
         android:name="ua.kpi.comsys.io8371.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_book"
+        android:name="ua.kpi.comsys.io8371.ui.book.BookFragment"
+        android:label="@string/title_books"
+        tools:layout="@layout/fragment_book" />
 </navigation>
