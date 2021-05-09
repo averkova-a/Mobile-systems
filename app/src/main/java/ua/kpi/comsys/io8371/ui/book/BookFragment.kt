@@ -1,7 +1,5 @@
 package ua.kpi.comsys.io8371.ui.book
 
-import  ua.kpi.comsys.io8371.ui.book.SwipeToDeleteCallback
-import  ua.kpi.comsys.io8371.ui.book.ViewAdapterRecycler
 import android.text.Editable
 import android.text.TextWatcher
 import android.content.Intent
