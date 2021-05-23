@@ -7,6 +7,7 @@ import android.widget.TextView
 import ua.kpi.comsys.io8371.R
 import com.fasterxml.jackson.databind.ObjectMapper
 import java.lang.reflect.Field
+import com.bumptech.glide.Glide
 
 class BookDetailsActivity : AppCompatActivity() {
 
@@ -34,9 +35,7 @@ class BookDetailsActivity : AppCompatActivity() {
         val jsonText = intent.extras!!["info"].toString()
         info = mapper.readValue(jsonText,BookNewJson::class.java)
         image = findViewById(R.id.image)
-        val drawable = getResId(info.image!!.replace(".jpg", ""), R.drawable::class.java)
-        if (drawable != -1)
-            image.setImageDrawable(this.resources.getDrawable(drawable))
+        Glide.with(this).load(info.image).into(image)
 
         year = findViewById(R.id.year)
         year.text = year.text.toString() +  " "  + info.year
