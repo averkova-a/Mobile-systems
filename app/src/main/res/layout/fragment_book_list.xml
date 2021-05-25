@@ -30,5 +30,5 @@
         android:layout_height="wrap_content"
         android:text="Add Book"
         android:layout_gravity="center"
-        android:onClick="onAddBookClick"/>
+        android:onClick="onCreate"/>
 </LinearLayout>

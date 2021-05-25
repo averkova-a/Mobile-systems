@@ -1,32 +1,75 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    ext.kotlin_version = "1.4.32"
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:4.1.2"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id "kotlin-kapt"
 }
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        mavenCentral()
-        maven {
-            url "https://jitpack.io"
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.ua.kpi.comsys.io8371"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        maven { url "https://jcenter.bintray.com" }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.jjoe64:graphview:4.2.2'
+    implementation 'com.github.IntruderShanky:scatter-piechart:1.0.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.8.5'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.8.5'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.github.mejdi14:Flat-Dialog-Android:1.0.5'
+    implementation 'com.aminography:choosephotohelper:1.3.1'
+    implementation 'com.arasthel:spannedgridlayoutmanager:3.0.2'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
+    annotationProcessor 'com.squareup.moshi:moshi-kotlin-codegen:1.12.0'
+    implementation "androidx.room:room-runtime:2.3.0"
+    implementation "androidx.room:room-ktx:2.3.0"
+    annotationProcessor "androidx.room:room-compiler:2.3.0"
+    kapt "androidx.room:room-compiler:2.3.0"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    implementation 'com.android.support:multidex:1.0.3'
+
 }

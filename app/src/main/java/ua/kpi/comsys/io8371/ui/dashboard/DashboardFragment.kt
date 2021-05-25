@@ -9,6 +9,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.intrusoft.scatter.ChartData
+import com.intrusoft.scatter.PieChart
+import com.jjoe64.graphview.GraphView
+import com.jjoe64.graphview.series.DataPoint
+import com.jjoe64.graphview.series.LineGraphSeries
 import ua.kpi.comsys.io8371.R
 
 class DashboardFragment : Fragment() {
